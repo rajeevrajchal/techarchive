@@ -33,8 +33,8 @@ export const Variables = {
 		slow: '350ms ease'
 	},
 	font: {
-		sans: "'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-		mono: "'SF Mono', Monaco, 'Cascadia Code', 'Courier New', monospace"
+		sans: "'Space Grotesk', system-ui, sans-serif",
+		mono: "'Space Mono', 'Courier New', monospace"
 	}
 } as const;
 

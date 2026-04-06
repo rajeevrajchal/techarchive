@@ -20,9 +20,19 @@ body {
 	transition:
 		background env(--transition-base),
 		color env(--transition-base);
+	--max-width: min(100vw - (2 * var(--layout-gutter)), var(--content-max-width));
 }
 
 .app-content {
-	width: min(100vw - (2 * var(--layout-gutter)), var(--content-max-width));
+	width: var(--max-width);
 	margin-inline: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: env(--font-sans);
 }

@@ -2,14 +2,14 @@
 	import '@styles/css/reset.css';
 	import '@styles/css/global.css';
 
-	import DocumentHead from '@components/document-head.svelte';
 	import Debug from '@modules/tweak-pane/debug.svelte';
+	import DocumentHead from '@components/document-head.svelte';
+	// import Header from '@components/header.svelte';
 
 	let { children } = $props();
 </script>
 
 <DocumentHead />
-<main class="app-content">
-	{@render children()}
-</main>
+<!-- <Header /> -->
+{@render children()}
 <Debug />

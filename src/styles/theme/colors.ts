@@ -6,7 +6,7 @@ export const colors = {
 		accent: '#dee2e6'
 	},
 	dark: {
-		primary: '#212529',
+		primary: '#131315',
 		secondary: '#343a40',
 		tertiary: '#495057',
 		accent: '#6c757d'

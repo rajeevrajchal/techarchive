@@ -9,7 +9,7 @@ export const TWEAK_STORAGE_KEY = 'sunita:tweak-state:v1';
 export const DEFAULT_TWEAK_STATE: TweakState = {
 	showDebugGrid: false,
 	showDebugLayout: false,
-	contentMaxWidth: 960
+	contentMaxWidth: 1440
 };
 
 function clamp(value: number, min: number, max: number): number {

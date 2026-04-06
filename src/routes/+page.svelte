@@ -1,2 +1,9 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+	import Feature from '@modules/landing/feature.svelte';
+	import Home from '@modules/landing/home.svelte';
+</script>
+
+<Home />
+<div class="app-content">
+	<Feature />
+</div>
