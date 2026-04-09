@@ -55,18 +55,26 @@
 
 		.heading {
 			color: var(--color-white);
-			font-size: 4rem;
 			font-weight: bold;
 			text-transform: uppercase;
 			text-shadow: 0 4px 4px rgba(255, 255, 255, 0.5);
 			letter-spacing: 10px;
 			opacity: 0.8;
+			font-size: 48px;
+
+			@media (-md) {
+				font-size: 64px;
+			}
 		}
 
 		.description {
 			text-align: center;
-			width: 60%;
+			width: 80%;
 			color: var(--color-accent);
+
+			@media (-md) {
+				width: 60%;
+			}
 		}
 
 		a {
