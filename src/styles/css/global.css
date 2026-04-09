@@ -23,11 +23,6 @@ body {
 	--max-width: min(100vw - (2 * var(--layout-gutter)), var(--content-max-width));
 }
 
-.app-content {
-	width: var(--max-width);
-	margin-inline: auto;
-}
-
 h1,
 h2,
 h3,

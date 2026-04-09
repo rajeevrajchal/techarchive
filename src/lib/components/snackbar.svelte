@@ -16,8 +16,8 @@
 	.container {
 		background: green;
 		position: fixed;
-		bottom: env(--space-lg);
-		right: env(--space-sm);
+		bottom: env(--space-md);
+		right: 0;
 		z-index: 1;
 	}
 
