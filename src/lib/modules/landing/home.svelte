@@ -60,6 +60,7 @@
 			text-transform: uppercase;
 			text-shadow: 0 4px 4px rgba(255, 255, 255, 0.5);
 			letter-spacing: 10px;
+			opacity: 0.8;
 		}
 
 		.description {
@@ -83,6 +84,7 @@
 		.logo {
 			width: 200px;
 			height: 200px;
+			opacity: 0.8;
 		}
 	}
 </style>
