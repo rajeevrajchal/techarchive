@@ -1,1 +1,2 @@
 export { default as Search } from './search.svelte';
+export { default as Logo } from './logo.svelte';

@@ -1,5 +1,19 @@
+<script lang="ts">
+	let logoRef: HTMLElement | undefined = $state();
+</script>
+
 <section>
-	<div class="content">collection of tech</div>
+	<div class="content">
+		<div class="logo" bind:this={logoRef}>
+			<img src="/logo.png" alt="Museum Logo" />
+		</div>
+		<p class="heading">Heloworld</p>
+		<p class="description">
+			Every language has an origin story. <strong>Heloworld</strong> catalogues the people, problems,
+			and moments that created the tools we code with today.
+		</p>
+		<a href="exhibtion">Enter Museum</a>
+	</div>
 </section>
 
 <style>
@@ -15,6 +29,10 @@
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
 		&::before {
 			content: '';
 			position: absolute;
@@ -27,5 +45,41 @@
 	.content {
 		position: relative;
 		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: env(--space-lg);
+
+		.heading {
+			color: var(--color-white);
+			font-size: 4rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-shadow: 0 4px 4px rgba(255, 255, 255, 0.5);
+			letter-spacing: 10px;
+		}
+
+		.description {
+			text-align: center;
+			width: 60%;
+		}
+
+		a {
+			background: var(--color-accent);
+			padding-block: env(--space-md);
+			padding-inline: env(--space-lg);
+			border-radius: 4px;
+			transition: transform 0.2s ease;
+			will-change: transform;
+
+			&:hover {
+				transform: translateY(-2px);
+			}
+		}
+
+		.logo {
+			width: 200px;
+			height: 200px;
+		}
 	}
 </style>
