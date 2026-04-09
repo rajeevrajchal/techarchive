@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Snackbar from '@components/snackbar.svelte';
+
 	let logoRef: HTMLElement | undefined = $state();
 </script>
 
@@ -14,6 +16,7 @@
 		</p>
 		<a href="exhibtion">Enter Museum</a>
 	</div>
+	<Snackbar />
 </section>
 
 <style>
@@ -62,13 +65,13 @@
 		.description {
 			text-align: center;
 			width: 60%;
+			color: var(--color-accent);
 		}
 
 		a {
 			background: var(--color-accent);
 			padding-block: env(--space-md);
 			padding-inline: env(--space-lg);
-			border-radius: 4px;
 			transition: transform 0.2s ease;
 			will-change: transform;
 
