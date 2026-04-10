@@ -14,7 +14,7 @@
 			Every language has an origin story. <strong>Heloworld</strong> catalogues the people, problems,
 			and moments that created the tools we code with today.
 		</p>
-		<a href="exhibtion">Enter Museum</a>
+		<a href="exhibition">Enter Museum</a>
 	</div>
 	<Snackbar />
 </section>
