@@ -41,7 +41,7 @@
 			position: absolute;
 			inset: 0;
 			z-index: 1;
-			background: rgba(0, 0, 0, 0.8);
+			background: rgba(0, 0, 0, 0.6);
 		}
 	}
 

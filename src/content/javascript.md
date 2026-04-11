@@ -1,11 +1,30 @@
 ---
-title: "JavaScript: The Language of the Web"
-date: "2025-01-15"
+title: 'JavaScript: The Language of the Web'
+born: 1995-12-04
+range: 1995–present
 tags: [javascript, web, ecmascript, node]
 description: From a 10-day Netscape prototype to the universal language of the internet — the complete archive entry for JavaScript.
 category: language
 status: active
 difficulty: beginner-to-advanced
+creator: Brendan Eich
+maintainer: ECMA International
+contributors:
+  [
+    Brendan Eich,
+    TC39 Committee,
+    V8 Team,
+    Mozilla JS Team,
+    Apple JavaScriptCore Team,
+    Meta Hermes Team
+  ]
+docs:
+  - title: 'MDN JavaScript Guide'
+    url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide'
+  - title: 'ECMAScript Specification'
+    url: 'https://tc39.es/ecma262/'
+books:
+  - title: "You Don't Know JS (YDKJS)"
 ---
 
 <!-- ENHANCE: Add interactive code playground embed (e.g., StackBlitz) -->
@@ -41,12 +60,12 @@ Despite sharing a name, JavaScript is fundamentally different from Java in how i
 
 It is arguably the most actively evolved language in the world, driven by its massive ecosystem and competitive browser engine wars:
 
-| Engine | Maintained By | Used In |
-| :--- | :--- | :--- |
-| V8 | Google | Chrome, Node.js, Edge |
-| SpiderMonkey | Mozilla | Firefox |
-| JavaScriptCore | Apple | Safari |
-| Hermes | Meta | React Native |
+| Engine         | Maintained By | Used In               |
+| :------------- | :------------ | :-------------------- |
+| V8             | Google        | Chrome, Node.js, Edge |
+| SpiderMonkey   | Mozilla       | Firefox               |
+| JavaScriptCore | Apple         | Safari                |
+| Hermes         | Meta          | React Native          |
 
 <!-- ENHANCE: Add engine performance benchmark comparison -->
 
@@ -54,15 +73,15 @@ It is arguably the most actively evolved language in the world, driven by its ma
 
 ## Technical Profile
 
-| Feature | Details |
-| :--- | :--- |
-| **Paradigm** | Multi-paradigm: Event-driven, functional, imperative, OOP |
-| **Typing Discipline** | Dynamic, duck typing |
-| **First Appeared** | December 4, 1995 |
-| **Standard** | ECMAScript (ECMA-262) |
-| **Platform** | Browsers, Node/Deno/Bun, Mobile, Desktop, IoT |
-| **Current Version** | ES2025 |
-| **File Extensions** | `.js`, `.mjs`, `.cjs` |
+| Feature               | Details                                                   |
+| :-------------------- | :-------------------------------------------------------- |
+| **Paradigm**          | Multi-paradigm: Event-driven, functional, imperative, OOP |
+| **Typing Discipline** | Dynamic, duck typing                                      |
+| **First Appeared**    | December 4, 1995                                          |
+| **Standard**          | ECMAScript (ECMA-262)                                     |
+| **Platform**          | Browsers, Node/Deno/Bun, Mobile, Desktop, IoT             |
+| **Current Version**   | ES2025                                                    |
+| **File Extensions**   | `.js`, `.mjs`, `.cjs`                                     |
 
 ---
 
@@ -84,37 +103,37 @@ A closure is a function that **remembers the environment it was created in**, ev
 
 ```javascript
 function makeCounter(start = 0) {
-  let count = start; // captured in closure scope
+ let count = start; // captured in closure scope
 
-  return {
-    increment: () => ++count,
-    decrement: () => --count,
-    value:     () => count,
-  };
+ return {
+  increment: () => ++count,
+  decrement: () => --count,
+  value: () => count
+ };
 }
 
 const counter = makeCounter(10);
 counter.increment(); // 11
 counter.increment(); // 12
-counter.value();     // 12
+counter.value(); // 12
 ```
 
 ### The Event Loop
 
 JavaScript runs on a **single thread** but achieves concurrency through the event loop. Queue priority determines execution order.
 
-| Queue | Examples | Priority |
-| :--- | :--- | :--- |
-| Call Stack | Synchronous code | Immediate |
-| Microtask | `Promise.then`, `queueMicrotask` | After current task |
-| Macrotask | `setTimeout`, `setInterval` | After all microtasks |
+| Queue      | Examples                         | Priority             |
+| :--------- | :------------------------------- | :------------------- |
+| Call Stack | Synchronous code                 | Immediate            |
+| Microtask  | `Promise.then`, `queueMicrotask` | After current task   |
+| Macrotask  | `setTimeout`, `setInterval`      | After all microtasks |
 
 ```javascript
 console.log('1 - sync');
 setTimeout(() => console.log('4 - macrotask'), 0);
 Promise.resolve()
-  .then(() => console.log('2 - microtask'))
-  .then(() => console.log('3 - microtask 2'));
+ .then(() => console.log('2 - microtask'))
+ .then(() => console.log('3 - microtask 2'));
 // Output order: 1 → 2 → 3 → 4
 ```
 
@@ -122,14 +141,14 @@ Promise.resolve()
 
 ```javascript
 async function fetchUser(id) {
-  try {
-    const res = await fetch(`/api/users/${id}`);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return await res.json();
-  } catch (err) {
-    console.error('Fetch failed:', err);
-    throw err; // always re-throw — never swallow errors silently
-  }
+ try {
+  const res = await fetch(`/api/users/${id}`);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return await res.json();
+ } catch (err) {
+  console.error('Fetch failed:', err);
+  throw err; // always re-throw — never swallow errors silently
+ }
 }
 ```
 

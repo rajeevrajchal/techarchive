@@ -1,72 +1,178 @@
 <script lang="ts">
+	import { Arrow } from '$lib/icon';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
 	let Post = $derived(data.content);
 	let meta = $derived(data.metadata);
+	let range = $derived(data.metadata.range.split('-'));
 </script>
 
-<article class="post">
-	<header class="post-header">
-		<h1 class="title">{meta.title}</h1>
-		<p class="description">{meta.description}</p>
-		<div class="meta-row">
-			<span class="badge">{meta.difficulty}</span>
-			<span class="date">{meta.date}</span>
-		</div>
-		{#if Array.isArray(meta.tags)}
-			<ul class="tags">
-				{#each meta.tags as tag (tag)}
-					<li class="tag">{tag}</li>
-				{/each}
-			</ul>
-		{/if}
-	</header>
+<section>
+	<nav>
+		<button class="back" onclick={() => history.back()}>
+			<Arrow arrow="left" />
+			<p>Exhibition</p>
+		</button>
+	</nav>
 
-	<div class="prose">
-		<Post />
-	</div>
-</article>
+	<article class="post">
+		<div class="header">
+			<div class="name">
+				<h1 class="title">{meta.title}</h1>
+				<p class="description">{meta.description}</p>
+				<div class="range">
+					<p>{range[0]}</p>
+					<p>{range[1]}</p>
+				</div>
+			</div>
+			<div class="author">
+				<div class="row">
+					<div class="col section">Creator</div>
+					<div class="col val">{meta.creator}</div>
+				</div>
+				<div class="row">
+					<div class="col section">Maintainer</div>
+					<div class="col val">{meta.maintainer}</div>
+				</div>
+				<div class="row">
+					<div class="col section">Difficulty</div>
+					<div class="col val">{meta.difficulty}</div>
+				</div>
+				<div class="row">
+					<div class="col section">Status</div>
+					<div class="col val">{meta.status}</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<Post />
+		</div>
+	</article>
+</section>
 
 <style>
-	.post {
-		max-width: 720px;
-		padding: env(--space-md);
+	section {
+		height: 100vh;
+		width: 100%;
+		overflow: auto;
+		position: relative;
 	}
 
-	.post-header {
-		margin-bottom: env(--space-lg);
+	nav {
+		background: rgba(0, 0, 0, 0.4);
+		position: sticky;
+		top: 0;
+		left: 0;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		padding-inline: calc(env(--space-lg) * 2);
+		padding-block: calc(env(--space-lg));
+		z-index: 4;
 	}
 
-	.title {
-		margin-bottom: env(--space-sm);
+	.back {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: env(--space-md);
+		color: var(--color-text);
+		z-index: 2;
+	}
+
+	article {
+		width: var(--max-width);
+		margin: 0 auto;
+		position: relative;
+		padding-inline: calc(env(--space-lg) * 2);
+		padding-block: calc(env(--space-lg));
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		gap: env(--space-lg);
+	}
+
+	.header {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			'name'
+			'author';
+		gap: env(--space-lg);
+
+		@media (--lg) {
+			grid-template-columns: 1fr max-content;
+			grid-template-areas:
+				'name author'
+				'name author';
+		}
+	}
+
+	.name {
+		display: flex;
+		flex-direction: column;
+		gap: env(--space-md);
 	}
 
 	.description {
-		margin-bottom: env(--space-sm);
+		color: var(--color-se);
 	}
 
-	.meta-row {
+	.title {
+		text-transform: uppercase;
+		font-size: 2rem;
+	}
+
+	.range {
+		font-size: 24px;
+		font-weight: 700;
 		display: flex;
-		gap: env(--space-sm);
-		margin-bottom: env(--space-sm);
+		align-items: center;
+		gap: env(--space-md);
+		text-transform: uppercase;
 	}
 
-	.badge {
-		padding: env(--space-xs) env(--space-sm);
-		background: env(--color-light-secondary);
-	}
-
-	.tags {
+	.author {
+		grid-area: author;
 		display: flex;
+		flex-direction: column;
+		gap: env(--space-lg);
+
+		@media (--lg) {
+			min-height: 200px;
+			min-width: 400px;
+			padding-inline: env(--space-lg);
+			padding-block: env(--space-md);
+			border-radius: 6px;
+			background: rgba(0, 0, 0, 0.1);
+		}
+	}
+
+	.row {
+		display: flex;
+		flex-direction: column;
 		gap: env(--space-xs);
-		list-style: none;
-		padding: 0;
-		margin: 0;
+
+		.section {
+			text-transform: uppercase;
+			font-size: 16px;
+			font-weight: 600;
+		}
+
+		.val {
+			color: var(--color-white);
+			opacity: 0.8;
+			text-transform: capitalize;
+		}
 	}
 
-	.tag {
-		padding: env(--space-xs) env(--space-sm);
+	.content {
+		margin-top: env(--space-lg);
+		display: flex;
+		flex-direction: column;
+		gap: env(--space-lg);
 	}
 </style>

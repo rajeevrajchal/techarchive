@@ -1,13 +1,5 @@
 import { colors } from './colors';
 
-export const breakpoints = {
-	sm: '640px',
-	md: '768px',
-	lg: '1024px',
-	xl: '1280px',
-	'2xl': '1536px'
-} as const;
-
 export const Variables = {
 	color: {
 		light: colors.light,
@@ -38,4 +30,16 @@ export const Variables = {
 	}
 } as const;
 
-export const Breakpoints = breakpoints;
+export const Breakpoints = {
+	tn: '(min-width: 320px)',
+	sm: '(min-width: 430px)',
+	md: '(min-width: 570px)',
+	lg: '(min-width: 760px)',
+	xl: '(min-width: 1080px)',
+	'2xl': '(min-width: 1600px)',
+	'3xl': '(min-width: 2400px)',
+	landscape: '(orientation: landscape)'
+} as const;
+
+export type Breakpoint = keyof typeof Breakpoints;
+export type BreakpointValue = (typeof Breakpoints)[Breakpoint];
