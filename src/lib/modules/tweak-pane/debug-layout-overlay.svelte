@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-
-	import { Breakpoints } from '@theme';
+	import { BreakpointsPx, Variables } from '@theme';
 
 	interface Props {
 		visible: boolean;
@@ -16,18 +15,15 @@
 		color?: string;
 	}
 
-	const MD_BREAKPOINT = Number.parseInt(Breakpoints.md, 10);
-	const LG_BREAKPOINT = Number.parseInt(Breakpoints.lg, 10);
-
 	let {
 		visible,
 		targetSelector = '.app-content',
-		columnsMobile = 3,
-		columnsTablet = 8,
-		columnsDesktop = 12,
-		columnGapMobile = 8,
-		columnGapTablet = 12,
-		columnGapDesktop = 20,
+		columnsMobile = Number(Variables.grid['columns-mobile']),
+		columnsTablet = Number(Variables.grid['columns-tablet']),
+		columnsDesktop = Number(Variables.grid['columns-desktop']),
+		columnGapMobile = Number.parseFloat(Variables.grid['gap-mobile']),
+		columnGapTablet = Number.parseFloat(Variables.grid['gap-tablet']),
+		columnGapDesktop = Number.parseFloat(Variables.grid['gap-desktop']),
 		opacity = 0.22,
 		color = 'var(--color-accent)'
 	}: Props = $props();
@@ -37,16 +33,16 @@
 	let viewportWidth = $state(0);
 
 	let activeColumns = $derived(
-		viewportWidth < MD_BREAKPOINT
+		viewportWidth < BreakpointsPx.md
 			? columnsMobile
-			: viewportWidth < LG_BREAKPOINT
+			: viewportWidth < BreakpointsPx.lg
 				? columnsTablet
 				: columnsDesktop
 	);
 	let activeGap = $derived(
-		viewportWidth < MD_BREAKPOINT
+		viewportWidth < BreakpointsPx.md
 			? columnGapMobile
-			: viewportWidth < LG_BREAKPOINT
+			: viewportWidth < BreakpointsPx.lg
 				? columnGapTablet
 				: columnGapDesktop
 	);

@@ -1,3 +1,5 @@
+@import './text.css';
+
 :root {
 	color-scheme: light dark;
 
@@ -11,6 +13,10 @@
 	--color-text: light-dark(env(--color-dark-primary), env(--color-light-primary));
 }
 
+html {
+	font-size: 0.0625rem; /* 1rem = 16px so it 1px to 0.0625rem */
+}
+
 body {
 	position: relative;
 	margin: 0;
@@ -21,13 +27,21 @@ body {
 		background env(--transition-base),
 		color env(--transition-base);
 	--max-width: min(100vw - (2 * var(--layout-gutter)), var(--content-max-width));
+	font-size: 16rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: env(--font-sans);
+.grid {
+	display: grid;
+	grid-template-columns: repeat(env(--grid-columns-mobile), 1fr);
+	gap: env(--grid-gap-mobile);
+
+	@media (--md) {
+		grid-template-columns: repeat(env(--grid-columns-tablet), 1fr);
+		gap: env(--grid-gap-tablet);
+	}
+
+	@media (--lg) {
+		grid-template-columns: repeat(env(--grid-columns-desktop), 1fr);
+		gap: env(--grid-gap-desktop);
+	}
 }

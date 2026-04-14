@@ -60,10 +60,10 @@
 			text-shadow: 0 4px 4px rgba(255, 255, 255, 0.5);
 			letter-spacing: 10px;
 			opacity: 0.8;
-			font-size: 48px;
+			font-size: 48rem;
 
 			@media (-md) {
-				font-size: 64px;
+				font-size: 64rem;
 			}
 		}
 

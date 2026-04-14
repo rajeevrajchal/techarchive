@@ -6,12 +6,12 @@ export const Variables = {
 		dark: colors.dark
 	},
 	space: {
-		xs: '4px',
-		sm: '8px',
-		md: '16px',
-		lg: '24px',
-		xl: '32px',
-		'2xl': '48px'
+		xs: '4rem',
+		sm: '8rem',
+		md: '16rem',
+		lg: '24rem',
+		xl: '32rem',
+		xxl: '48rem'
 	},
 	shadow: {
 		sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
@@ -27,6 +27,14 @@ export const Variables = {
 	font: {
 		sans: "'Space Grotesk', system-ui, sans-serif",
 		mono: "'Space Mono', 'Courier New', monospace"
+	},
+	grid: {
+		'columns-mobile': '3',
+		'columns-tablet': '8',
+		'columns-desktop': '12',
+		'gap-mobile': '8px',
+		'gap-tablet': '12px',
+		'gap-desktop': '20px'
 	}
 } as const;
 
@@ -36,9 +44,17 @@ export const Breakpoints = {
 	md: '(min-width: 570px)',
 	lg: '(min-width: 760px)',
 	xl: '(min-width: 1080px)',
-	'2xl': '(min-width: 1600px)',
-	'3xl': '(min-width: 2400px)',
+	xxl: '(min-width: 1600px)',
 	landscape: '(orientation: landscape)'
+} as const;
+
+export const BreakpointsPx = {
+	tn: 320,
+	sm: 430,
+	md: 570,
+	lg: 760,
+	xl: 1080,
+	xxl: 1600
 } as const;
 
 export type Breakpoint = keyof typeof Breakpoints;
