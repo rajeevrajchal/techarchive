@@ -45,3 +45,15 @@ body {
 		gap: env(--grid-gap-desktop);
 	}
 }
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: env(--space-md);
+}
+
+.chip {
+	border: 1px solid var(--color-tertiary);
+	padding-inline: env(--space-md);
+	padding-block: env(--space-sm);
+}

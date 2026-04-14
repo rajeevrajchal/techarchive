@@ -1,6 +1,7 @@
 ---
-title: "Go: Simplicity as a Superpower"
-date: "2025-02-05"
+title: 'Go: Simplicity as a Superpower'
+date: '2025-02-05'
+born: 1995-12-04
 tags: [go, golang, concurrency, cloud, backend, microservices]
 description: How Google's opinionated, minimalist language became the backbone of modern cloud infrastructure.
 category: language
@@ -39,12 +40,12 @@ The trio brought extraordinary pedigree: Ken Thompson co-created Unix and C. Rob
 - **Maintenance Status:** 🟢 **Extremely Active**
 - **Compatibility Promise:** Go 1.x maintains **strict backwards compatibility** — code written for Go 1.0 compiles and runs on Go 1.23
 
-| Version | Notable Feature |
-| :--- | :--- |
-| Go 1.18 | Generics (biggest addition since 1.0) |
+| Version | Notable Feature                           |
+| :------ | :---------------------------------------- |
+| Go 1.18 | Generics (biggest addition since 1.0)     |
 | Go 1.21 | Built-in `slices`, `maps`, `cmp` packages |
-| Go 1.22 | Loop variable semantics fix |
-| Go 1.23 | Range over functions (iterators) |
+| Go 1.22 | Loop variable semantics fix               |
+| Go 1.23 | Range over functions (iterators)          |
 
 <!-- ENHANCE: Add Go's backwards compatibility pledge explanation -->
 
@@ -52,17 +53,17 @@ The trio brought extraordinary pedigree: Ken Thompson co-created Unix and C. Rob
 
 ## Technical Profile
 
-| Feature | Details |
-| :--- | :--- |
-| **Paradigm** | Procedural, concurrent, slightly OOP (composition over inheritance) |
-| **Typing Discipline** | Static, strong, structural interfaces |
-| **Memory Management** | Garbage collected (low-latency GC) |
-| **Concurrency Model** | CSP (Communicating Sequential Processes) — goroutines + channels |
-| **First Stable Release** | March 28, 2012 |
-| **Compiler** | `gc` (Go compiler), `gccgo` |
-| **Platform** | Cross-compile to any OS/arch from any OS |
-| **Current Version** | Go 1.23 |
-| **File Extension** | `.go` |
+| Feature                  | Details                                                             |
+| :----------------------- | :------------------------------------------------------------------ |
+| **Paradigm**             | Procedural, concurrent, slightly OOP (composition over inheritance) |
+| **Typing Discipline**    | Static, strong, structural interfaces                               |
+| **Memory Management**    | Garbage collected (low-latency GC)                                  |
+| **Concurrency Model**    | CSP (Communicating Sequential Processes) — goroutines + channels    |
+| **First Stable Release** | March 28, 2012                                                      |
+| **Compiler**             | `gc` (Go compiler), `gccgo`                                         |
+| **Platform**             | Cross-compile to any OS/arch from any OS                            |
+| **Current Version**      | Go 1.23                                                             |
+| **File Extension**       | `.go`                                                               |
 
 ---
 
@@ -111,7 +112,7 @@ func main() {
 
 ### Channels: Communication Over Shared Memory
 
-The Go mantra: *"Do not communicate by sharing memory; share memory by communicating."* Channels are typed conduits between goroutines.
+The Go mantra: _"Do not communicate by sharing memory; share memory by communicating."_ Channels are typed conduits between goroutines.
 
 ```go
 func producer(ch chan<- int) {

@@ -1,11 +1,20 @@
-<script>
+<script lang="ts">
 	import { Arrow } from '$lib/icon';
 
-	let timelineWidth = $state(1);
+	interface Props {
+		currentIndex: number;
+		total: number;
+		onPrev: () => void;
+		onNext: () => void;
+	}
+
+	let { currentIndex, total, onPrev, onNext }: Props = $props();
+
+	let timelineWidth = $derived(total <= 1 ? 100 : (currentIndex / (total - 1)) * 100);
 </script>
 
 <nav>
-	<button class="previous">
+	<button class="previous" onclick={onPrev} disabled={currentIndex === 0}>
 		<Arrow arrow="left" />
 		<span>1998</span>
 	</button>
@@ -19,7 +28,7 @@
 		<p class="hint">Scroll to slide</p>
 	</div>
 
-	<button class="next">
+	<button class="next" onclick={onNext} disabled={currentIndex === total - 1}>
 		<span>2000</span>
 		<Arrow arrow="right" />
 	</button>
@@ -74,6 +83,7 @@
 			left: 0;
 			height: 100%;
 			background: var(--color-accent);
+			transition: width env(--transition-base);
 		}
 	}
 
@@ -86,6 +96,12 @@
 		display: flex;
 		align-items: center;
 		gap: env(--space-md);
+		transition: opacity env(--transition-base);
+	}
+
+	button:disabled {
+		opacity: 0.3;
+		cursor: not-allowed;
 	}
 
 	.previous {
