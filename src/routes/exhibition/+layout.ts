@@ -10,12 +10,17 @@ export const load: LayoutLoad = () => {
 		return {
 			slug,
 			title: (meta.title as string) ?? slug,
+			born: (meta.born as string) ?? '',
 			description: (meta.description as string) ?? '',
 			difficulty: (meta.difficulty as string) ?? '',
 			tags: (meta.tags as string[]) ?? [],
-			date: (meta.date as string) ?? '',
 			category: (meta.category as string) ?? '',
-			status: (meta.status as string) ?? ''
+			status: (meta.status as string) ?? '',
+			creator: (meta.creator as string) ?? '',
+			maintainer: (meta.maintainer as string) ?? '',
+			contributors: (meta.contributors as string[]) ?? [],
+			docs: (meta.docs as { title: string; url: string }[]) ?? [],
+			book: (meta.book as { title: string }[]) ?? []
 		};
 	});
 

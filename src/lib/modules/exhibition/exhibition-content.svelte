@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Language } from './types';
+	import type { Language } from '$lib/shared/types/language';
 
 	interface Props {
 		languages: Language[];

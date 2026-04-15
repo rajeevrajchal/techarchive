@@ -1,11 +1,35 @@
 ---
 title: "Python: The Language That Reads Like English"
 date: "2025-01-20"
+born: 1991-02-20
 tags: [python, data-science, ai, scripting, backend]
 description: From a Christmas hobby project to the backbone of AI and data science — the complete archive entry for Python.
 category: language
 status: active
 difficulty: beginner-to-advanced
+creator: Guido van Rossum
+maintainer: Python Software Foundation (PSF)
+contributors:
+  [
+    Guido van Rossum,
+    Barry Warsaw,
+    Tim Peters,
+    Raymond Hettinger,
+    Brett Cannon,
+    Victor Stinner,
+    Pablo Galindo Salgado
+  ]
+docs:
+  - title: 'Official Python Documentation'
+    url: 'https://docs.python.org/3/'
+  - title: 'Python Language Reference'
+    url: 'https://docs.python.org/3/reference/'
+  - title: 'PEP Index'
+    url: 'https://peps.python.org/'
+books:
+  - title: "Fluent Python"
+  - title: "Python Cookbook"
+  - title: "Clean Code in Python"
 ---
 
 <!-- ENHANCE: Add interactive REPL embed (e.g., Pyodide-based) -->

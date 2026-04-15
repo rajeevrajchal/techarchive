@@ -1,12 +1,35 @@
 ---
 title: 'Go: Simplicity as a Superpower'
 date: '2025-02-05'
-born: 1995-12-04
+born: 2009-11-10
 tags: [go, golang, concurrency, cloud, backend, microservices]
 description: How Google's opinionated, minimalist language became the backbone of modern cloud infrastructure.
 category: language
 status: active
 difficulty: intermediate
+creator: Robert Griesemer, Rob Pike, Ken Thompson
+maintainer: Google (open source — BSD license)
+contributors:
+  [
+    Robert Griesemer,
+    Rob Pike,
+    Ken Thompson,
+    Go Core Team,
+    Russ Cox,
+    Ian Lance Taylor,
+    Brad Fitzpatrick
+  ]
+docs:
+  - title: 'Official Go Documentation'
+    url: 'https://go.dev/doc/'
+  - title: 'Go Standard Library'
+    url: 'https://pkg.go.dev/std'
+  - title: 'Effective Go'
+    url: 'https://go.dev/doc/effective_go'
+books:
+  - title: 'The Go Programming Language'
+  - title: 'Learning Go'
+  - title: 'Concurrency in Go'
 ---
 
 <!-- ENHANCE: Add Go concurrency model diagram (goroutines + channels visualised) -->

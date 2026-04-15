@@ -1,11 +1,35 @@
 ---
 title: "TypeScript: JavaScript With a Safety Net"
 date: "2025-01-25"
+born: 2012-10-01
 tags: [typescript, javascript, static-typing, microsoft, tooling]
 description: How Microsoft's open-source superset of JavaScript became the standard for serious web development at scale.
 category: language
 status: active
 difficulty: intermediate-to-advanced
+creator: Anders Hejlsberg
+maintainer: Microsoft (open source — MIT license)
+contributors:
+  [
+    Anders Hejlsberg,
+    Ryan Cavanaugh,
+    Daniel Rosenwasser,
+    Jake Bailey,
+    Ron Buckton,
+    Nathan Shively-Sanders,
+    TypeScript Core Team
+  ]
+docs:
+  - title: 'TypeScript Handbook'
+    url: 'https://www.typescriptlang.org/docs/'
+  - title: 'TypeScript Playground'
+    url: 'https://www.typescriptlang.org/play'
+  - title: 'ECMAScript Specification'
+    url: 'https://tc39.es/ecma262/'
+books:
+  - title: "Programming TypeScript"
+  - title: "Effective TypeScript"
+  - title: "TypeScript Cookbook"
 ---
 
 <!-- ENHANCE: Add TS vs JS decision flowchart diagram -->

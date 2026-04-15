@@ -1,11 +1,35 @@
 ---
 title: "Rust: Safety Without Sacrifice"
 date: "2025-02-01"
+born: 2015-05-15
 tags: [rust, systems, memory-safety, performance, wasm]
 description: The language that eliminated entire classes of bugs at compile time — and how it became the most admired language on Stack Overflow, nine years running.
 category: language
 status: active
 difficulty: advanced
+creator: Graydon Hoare
+maintainer: Rust Foundation
+contributors:
+  [
+    Graydon Hoare,
+    Brian Anderson,
+    Niko Matsakis,
+    Aaron Turon,
+    Alex Crichton,
+    Steve Klabnik,
+    Carol Nichols
+  ]
+docs:
+  - title: 'The Rust Programming Language (The Book)'
+    url: 'https://doc.rust-lang.org/book/'
+  - title: 'Rust Standard Library'
+    url: 'https://doc.rust-lang.org/std/'
+  - title: 'Rustonomicon'
+    url: 'https://doc.rust-lang.org/nomicon/'
+books:
+  - title: "The Rust Programming Language"
+  - title: "Programming Rust"
+  - title: "Rust for Rustaceans"
 ---
 
 <!-- ENHANCE: Add memory ownership visualiser (interactive diagram) -->
