@@ -1,8 +1,10 @@
 <script lang="ts">
+	import type { ExhibitionMeta } from '@modules/exhibition/types';
+
 	let {
 		meta
 	}: {
-		meta: Record<string, unknown>;
+		meta: ExhibitionMeta;
 	} = $props();
 </script>
 

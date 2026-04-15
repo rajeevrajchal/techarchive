@@ -1,7 +1,8 @@
 ---
-title: "Python: The Language That Reads Like English"
-date: "2025-01-20"
+title: 'Python: The Language That Reads Like English'
+date: '2025-01-20'
 born: 1991-02-20
+range: 1991–present
 tags: [python, data-science, ai, scripting, backend]
 description: From a Christmas hobby project to the backbone of AI and data science — the complete archive entry for Python.
 category: language
@@ -27,9 +28,9 @@ docs:
   - title: 'PEP Index'
     url: 'https://peps.python.org/'
 books:
-  - title: "Fluent Python"
-  - title: "Python Cookbook"
-  - title: "Clean Code in Python"
+  - title: 'Fluent Python'
+  - title: 'Python Cookbook'
+  - title: 'Clean Code in Python'
 ---
 
 <!-- ENHANCE: Add interactive REPL embed (e.g., Pyodide-based) -->
@@ -43,7 +44,7 @@ books:
 ## History & Origin
 
 - **Created By:** Guido van Rossum
-- **Original Name:** Python (named after *Monty Python's Flying Circus*, not the snake)
+- **Original Name:** Python (named after _Monty Python's Flying Circus_, not the snake)
 - **Born:** February 20, 1991
 - **Development Time:** Started as a hobby project over the Christmas holiday of 1989
 - **Purpose:** To create a language that emphasised **code readability** and allowed programmers to express concepts in fewer lines than C++ or Java
@@ -65,12 +66,12 @@ Python drew inspiration from **ABC** (data structures), **Modula-3** (modules), 
 
 Python 2 reached end-of-life on January 1, 2020 — all modern code runs on **Python 3**. The language's popularity has only accelerated with the AI revolution.
 
-| Version | Status |
-| :--- | :--- |
-| Python 3.13 | Current stable |
-| Python 3.12 | Active support |
+| Version     | Status              |
+| :---------- | :------------------ |
+| Python 3.13 | Current stable      |
+| Python 3.12 | Active support      |
 | Python 3.11 | Security fixes only |
-| Python 2.x | ⛔ End of Life |
+| Python 2.x  | ⛔ End of Life      |
 
 <!-- ENHANCE: Add PEP process explanation — how Python evolves -->
 
@@ -78,15 +79,15 @@ Python 2 reached end-of-life on January 1, 2020 — all modern code runs on **Py
 
 ## Technical Profile
 
-| Feature | Details |
-| :--- | :--- |
-| **Paradigm** | Multi-paradigm: OOP, procedural, functional |
+| Feature               | Details                                                        |
+| :-------------------- | :------------------------------------------------------------- |
+| **Paradigm**          | Multi-paradigm: OOP, procedural, functional                    |
 | **Typing Discipline** | Dynamic, strong typing; optional static via `mypy` / `pyright` |
-| **First Appeared** | February 20, 1991 |
-| **Standard** | Python Language Reference + PEPs |
-| **Platform** | Cross-platform: Linux, macOS, Windows, embedded |
-| **Current Version** | Python 3.13 |
-| **File Extension** | `.py`, `.pyw`, `.pyd` |
+| **First Appeared**    | February 20, 1991                                              |
+| **Standard**          | Python Language Reference + PEPs                               |
+| **Platform**          | Cross-platform: Linux, macOS, Windows, embedded                |
+| **Current Version**   | Python 3.13                                                    |
+| **File Extension**    | `.py`, `.pyw`, `.pyd`                                          |
 
 ---
 

@@ -1,7 +1,8 @@
 ---
-title: "TypeScript: JavaScript With a Safety Net"
-date: "2025-01-25"
+title: 'TypeScript: JavaScript With a Safety Net'
+date: '2025-01-25'
 born: 2012-10-01
+range: 2012–present
 tags: [typescript, javascript, static-typing, microsoft, tooling]
 description: How Microsoft's open-source superset of JavaScript became the standard for serious web development at scale.
 category: language
@@ -27,9 +28,9 @@ docs:
   - title: 'ECMAScript Specification'
     url: 'https://tc39.es/ecma262/'
 books:
-  - title: "Programming TypeScript"
-  - title: "Effective TypeScript"
-  - title: "TypeScript Cookbook"
+  - title: 'Programming TypeScript'
+  - title: 'Effective TypeScript'
+  - title: 'TypeScript Cookbook'
 ---
 
 <!-- ENHANCE: Add TS vs JS decision flowchart diagram -->
@@ -65,12 +66,12 @@ Anders Hejlsberg, the architect behind C# and Delphi, led the TypeScript project
 
 The TypeScript compiler and language server also powers the JavaScript intellisense in **VS Code** — meaning TypeScript's type inference benefits JavaScript users too, silently.
 
-| Version | Notable Feature |
-| :--- | :--- |
-| TS 5.0 | `const` type parameters |
-| TS 5.2 | `using` declarations (Explicit Resource Management) |
-| TS 5.4 | Preserved narrowing in closures |
-| TS 5.5 | Inferred type predicates |
+| Version | Notable Feature                                     |
+| :------ | :-------------------------------------------------- |
+| TS 5.0  | `const` type parameters                             |
+| TS 5.2  | `using` declarations (Explicit Resource Management) |
+| TS 5.4  | Preserved narrowing in closures                     |
+| TS 5.5  | Inferred type predicates                            |
 
 <!-- ENHANCE: Add full TypeScript version timeline -->
 
@@ -78,15 +79,15 @@ The TypeScript compiler and language server also powers the JavaScript intellise
 
 ## Technical Profile
 
-| Feature | Details |
-| :--- | :--- |
-| **Paradigm** | Superset of JavaScript — all JS paradigms, plus static typing |
-| **Typing Discipline** | Static, structural (duck typing at the type level) |
-| **First Appeared** | October 1, 2012 |
-| **Compiler** | `tsc` (TypeScript Compiler) |
-| **Platform** | Any JS target: Browsers, Node.js, Deno, Bun, edge runtimes |
-| **Current Version** | TypeScript 5.5 |
-| **File Extensions** | `.ts`, `.tsx`, `.d.ts` |
+| Feature               | Details                                                       |
+| :-------------------- | :------------------------------------------------------------ |
+| **Paradigm**          | Superset of JavaScript — all JS paradigms, plus static typing |
+| **Typing Discipline** | Static, structural (duck typing at the type level)            |
+| **First Appeared**    | October 1, 2012                                               |
+| **Compiler**          | `tsc` (TypeScript Compiler)                                   |
+| **Platform**          | Any JS target: Browsers, Node.js, Deno, Bun, edge runtimes    |
+| **Current Version**   | TypeScript 5.5                                                |
+| **File Extensions**   | `.ts`, `.tsx`, `.d.ts`                                        |
 
 ---
 
@@ -108,13 +109,13 @@ TypeScript uses **structural typing** — types are compatible if their shapes m
 
 ```typescript
 interface Point {
-  x: number;
-  y: number;
+	x: number;
+	y: number;
 }
 
 // This works — the shape matches, even without `implements Point`
 function printPoint(p: Point) {
-  console.log(`(${p.x}, ${p.y})`);
+	console.log(`(${p.x}, ${p.y})`);
 }
 
 const origin = { x: 0, y: 0, label: 'origin' }; // extra prop is fine
@@ -128,24 +129,24 @@ Generics let you write reusable, type-safe logic that works across many data typ
 ```typescript
 // A type-safe identity function
 function identity<T>(value: T): T {
-  return value;
+	return value;
 }
 
 // A generic repository pattern — Uncle Bob would approve
 interface Repository<T, ID> {
-  findById(id: ID): Promise<T | null>;
-  findAll(): Promise<T[]>;
-  save(entity: T): Promise<T>;
-  delete(id: ID): Promise<void>;
+	findById(id: ID): Promise<T | null>;
+	findAll(): Promise<T[]>;
+	save(entity: T): Promise<T>;
+	delete(id: ID): Promise<void>;
 }
 
 // Concrete implementation
 class UserRepository implements Repository<User, string> {
-  async findById(id: string): Promise<User | null> {
-    // implementation
-    return null;
-  }
-  // ...rest of implementation
+	async findById(id: string): Promise<User | null> {
+		// implementation
+		return null;
+	}
+	// ...rest of implementation
 }
 ```
 
@@ -155,19 +156,23 @@ The most powerful TypeScript pattern for modelling state — especially API resp
 
 ```typescript
 type LoadingState<T> =
-  | { status: 'idle' }
-  | { status: 'loading' }
-  | { status: 'success'; data: T }
-  | { status: 'error'; error: string };
+	| { status: 'idle' }
+	| { status: 'loading' }
+	| { status: 'success'; data: T }
+	| { status: 'error'; error: string };
 
 function renderUser(state: LoadingState<User>): string {
-  switch (state.status) {
-    case 'idle':    return 'Ready';
-    case 'loading': return 'Loading...';
-    case 'success': return `Hello, ${state.data.name}`;
-    case 'error':   return `Error: ${state.error}`;
-    // TypeScript enforces exhaustive checking here
-  }
+	switch (state.status) {
+		case 'idle':
+			return 'Ready';
+		case 'loading':
+			return 'Loading...';
+		case 'success':
+			return `Hello, ${state.data.name}`;
+		case 'error':
+			return `Error: ${state.error}`;
+		// TypeScript enforces exhaustive checking here
+	}
 }
 ```
 
@@ -177,10 +182,10 @@ TypeScript ships a powerful set of built-in type transformers.
 
 ```typescript
 interface User {
-  id: string;
-  name: string;
-  email: string;
-  passwordHash: string;
+	id: string;
+	name: string;
+	email: string;
+	passwordHash: string;
 }
 
 // Pick only the fields you need

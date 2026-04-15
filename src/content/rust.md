@@ -1,7 +1,8 @@
 ---
-title: "Rust: Safety Without Sacrifice"
-date: "2025-02-01"
+title: 'Rust: Safety Without Sacrifice'
+date: '2025-02-01'
 born: 2015-05-15
+range: 2015–present
 tags: [rust, systems, memory-safety, performance, wasm]
 description: The language that eliminated entire classes of bugs at compile time — and how it became the most admired language on Stack Overflow, nine years running.
 category: language
@@ -27,16 +28,16 @@ docs:
   - title: 'Rustonomicon'
     url: 'https://doc.rust-lang.org/nomicon/'
 books:
-  - title: "The Rust Programming Language"
-  - title: "Programming Rust"
-  - title: "Rust for Rustaceans"
+  - title: 'The Rust Programming Language'
+  - title: 'Programming Rust'
+  - title: 'Rust for Rustaceans'
 ---
 
 <!-- ENHANCE: Add memory ownership visualiser (interactive diagram) -->
 <!-- ENHANCE: Add Rust vs C++ head-to-head comparison -->
 <!-- ENHANCE: Add "Is Rust right for me?" decision flowchart -->
 
-**Rust** is a systems programming language focused on three goals: **safety, speed, and concurrency** — and critically, achieving all three *simultaneously*. It eliminates entire categories of bugs (buffer overflows, use-after-free, data races) at compile time, with zero runtime overhead.
+**Rust** is a systems programming language focused on three goals: **safety, speed, and concurrency** — and critically, achieving all three _simultaneously_. It eliminates entire categories of bugs (buffer overflows, use-after-free, data races) at compile time, with zero runtime overhead.
 
 ---
 
@@ -65,11 +66,11 @@ The central innovation was the **borrow checker**: a compile-time analysis pass 
 
 **Stack Overflow Most Admired Language:** Rust has held the #1 position every single year since 2016.
 
-| Edition | Year | Key Changes |
-| :--- | :--- | :--- |
-| Rust 2015 | 2015 | Initial stable release |
-| Rust 2018 | 2018 | NLL, module system overhaul |
-| Rust 2021 | 2021 | Resolver v2, new closure captures |
+| Edition   | Year | Key Changes                                  |
+| :-------- | :--- | :------------------------------------------- |
+| Rust 2015 | 2015 | Initial stable release                       |
+| Rust 2018 | 2018 | NLL, module system overhaul                  |
+| Rust 2021 | 2021 | Resolver v2, new closure captures            |
 | Rust 2024 | 2024 | `gen` blocks, `impl Trait` in more positions |
 
 <!-- ENHANCE: Add Rust RFC process explanation -->
@@ -78,16 +79,16 @@ The central innovation was the **borrow checker**: a compile-time analysis pass 
 
 ## Technical Profile
 
-| Feature | Details |
-| :--- | :--- |
-| **Paradigm** | Systems, functional, imperative, concurrent |
-| **Typing Discipline** | Static, strong, affine type system |
-| **Memory Management** | Ownership + borrow checker (no GC) |
-| **First Stable Release** | May 15, 2015 |
-| **Compiler** | `rustc` (LLVM backend) |
-| **Platform** | Native binaries, WebAssembly, embedded, kernel modules |
-| **Current Edition** | Rust 2024 |
-| **File Extension** | `.rs` |
+| Feature                  | Details                                                |
+| :----------------------- | :----------------------------------------------------- |
+| **Paradigm**             | Systems, functional, imperative, concurrent            |
+| **Typing Discipline**    | Static, strong, affine type system                     |
+| **Memory Management**    | Ownership + borrow checker (no GC)                     |
+| **First Stable Release** | May 15, 2015                                           |
+| **Compiler**             | `rustc` (LLVM backend)                                 |
+| **Platform**             | Native binaries, WebAssembly, embedded, kernel modules |
+| **Current Edition**      | Rust 2024                                              |
+| **File Extension**       | `.rs`                                                  |
 
 ---
 
@@ -168,7 +169,7 @@ Traits are Rust's answer to interfaces and type classes — composable, zero-cos
 ```rust
 trait Summary {
     fn summarise(&self) -> String;
-    
+
     // Default implementation — can be overridden
     fn preview(&self) -> String {
         format!("{}...", &self.summarise()[..50.min(self.summarise().len())])
@@ -210,7 +211,7 @@ impl Summary for Article {
 
 ## Archive Summary
 
-> **Rust** set out to answer a question the systems programming world had been avoiding: *can you have memory safety without a garbage collector?* The answer was yes — but it required a fundamentally new approach to ownership and types. The borrow checker is not a limitation; it is a time machine that moves your runtime bugs to compile time. Nine consecutive years as Stack Overflow's most admired language is not a coincidence. Rust is what happens when you refuse to accept the false choice between safe and fast.
+> **Rust** set out to answer a question the systems programming world had been avoiding: _can you have memory safety without a garbage collector?_ The answer was yes — but it required a fundamentally new approach to ownership and types. The borrow checker is not a limitation; it is a time machine that moves your runtime bugs to compile time. Nine consecutive years as Stack Overflow's most admired language is not a coincidence. Rust is what happens when you refuse to accept the false choice between safe and fast.
 
 <!-- ENHANCE: Add "Learning Path" section — resources for getting started -->
 <!-- ENHANCE: Add "Rust in the Linux Kernel" case study -->

@@ -10,7 +10,7 @@ export const load: LayoutLoad = () => {
 		return {
 			slug,
 			title: (meta.title as string) ?? slug,
-			born: (meta.born as string) ?? '',
+			born: meta.born ? new Date(meta.born as string) : new Date(0),
 			description: (meta.description as string) ?? '',
 			difficulty: (meta.difficulty as string) ?? '',
 			tags: (meta.tags as string[]) ?? [],
@@ -24,5 +24,9 @@ export const load: LayoutLoad = () => {
 		};
 	});
 
-	return { languages };
+	const sortedLanguages = languages.sort((a, b) => {
+		return a.born.getTime() - b.born.getTime();
+	});
+
+	return { languages: sortedLanguages };
 };

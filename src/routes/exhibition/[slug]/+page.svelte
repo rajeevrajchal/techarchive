@@ -7,7 +7,7 @@
 
 	let Post = $derived(data.content);
 	let meta = $derived(data.metadata);
-	let range = $derived(data.metadata.range.split('-'));
+	let range = $derived(data.metadata.range?.split('–') ?? []);
 </script>
 
 <section>

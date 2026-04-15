@@ -2,6 +2,7 @@
 title: 'Go: Simplicity as a Superpower'
 date: '2025-02-05'
 born: 2009-11-10
+range: 2009–present
 tags: [go, golang, concurrency, cloud, backend, microservices]
 description: How Google's opinionated, minimalist language became the backbone of modern cloud infrastructure.
 category: language
