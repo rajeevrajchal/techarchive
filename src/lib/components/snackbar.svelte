@@ -14,7 +14,6 @@
 
 <style>
 	.container {
-		background: green;
 		position: fixed;
 		bottom: env(--space-md);
 		right: 0;
@@ -28,7 +27,8 @@
 		column-gap: env(--space-md);
 		row-gap: env(--space-sm);
 		overflow: hidden;
-		background: var(--color-secondary);
+
+		background: rgba(255, 255, 255, 0.1);
 		width: 400px;
 
 		.icon {
@@ -45,7 +45,6 @@
 		}
 
 		.title {
-			color: var(--color-text);
 			font-weight: bold;
 			grid-area: title;
 			padding-top: env(--space-sm);

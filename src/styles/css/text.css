@@ -6,8 +6,9 @@ h5,
 h6 {
 	font-family: env(--font-sans);
 	font-weight: 700;
+
 	line-height: 1.25;
-	color: var(--color-text);
+	color: var(--color-white);
 }
 
 p,
@@ -16,7 +17,7 @@ li {
 	font-weight: 500;
 	line-height: 1.5;
 	font-family: env(--font-mono);
-	color: var(--color-text);
+	color: var(--color-white);
 	font-size: 16rem;
 }
 

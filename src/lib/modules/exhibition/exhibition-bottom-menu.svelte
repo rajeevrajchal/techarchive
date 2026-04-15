@@ -13,7 +13,7 @@
 	let timelineWidth = $derived(total <= 1 ? 100 : (currentIndex / (total - 1)) * 100);
 </script>
 
-<nav>
+<nav class="grid">
 	<button class="previous" onclick={onPrev} disabled={currentIndex === 0}>
 		<Arrow arrow="left" />
 		<span>1998</span>
@@ -40,15 +40,13 @@
 		bottom: 40px;
 		left: 0;
 		width: 100%;
-		padding-inline: calc(env(--space-lg) * 2);
-
-		display: grid;
-		grid-template-columns: 1fr 2fr 1fr;
 		align-items: center;
-		gap: env(--space-lg);
+		justify-content: cente;
 	}
 
 	.timeline-container {
+		grid-column: 4 / span 6;
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -57,6 +55,7 @@
 		.time {
 			color: var(--color-white);
 		}
+
 		.hint {
 			font-size: env(--space-md);
 			color: var(--color-accent);
@@ -87,6 +86,14 @@
 		}
 	}
 
+	.previous {
+		grid-column: 2 / span 1;
+	}
+
+	.next {
+		grid-column: 11 / span 1;
+	}
+
 	button {
 		background: none;
 		border: none;
@@ -102,14 +109,5 @@
 	button:disabled {
 		opacity: 0.3;
 		cursor: not-allowed;
-	}
-
-	.previous {
-		justify-content: flex-start;
-	}
-
-	.next {
-		width: 100%;
-		justify-content: flex-end;
 	}
 </style>

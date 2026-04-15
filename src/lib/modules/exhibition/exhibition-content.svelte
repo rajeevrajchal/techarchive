@@ -1,47 +1,24 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
 	import type { Language } from './types';
 
 	interface Props {
 		languages: Language[];
-		onIndexChange: (index: number) => void;
-		controller: { scrollTo?: (index: number) => void };
 	}
 
-	let { languages, onIndexChange, controller }: Props = $props();
+	let { languages }: Props = $props();
 
 	let scrollEl: HTMLDivElement | undefined = $state();
 
-	onMount(() => {
-		controller.scrollTo = (index: number) => {
-			if (scrollEl === undefined) return;
-
-			scrollEl.scrollTo({
-				left: index * scrollEl.clientWidth,
-				behavior: 'smooth'
-			});
-		};
-
-		const handleResize = () => {
-			if (scrollEl === undefined) return;
-			const index = Math.round(scrollEl.scrollLeft / scrollEl.clientWidth);
-			scrollEl.scrollTo({ left: index * scrollEl.clientWidth, behavior: 'instant' });
-		};
-
-		window.addEventListener('resize', handleResize);
-
-		return () => {
-			window.removeEventListener('resize', handleResize);
-		};
-	});
-
-	function handleScroll() {
+	const handleScroll = () => {
 		if (languages.length === 0) return;
 		if (scrollEl === undefined) return;
 		const index = Math.round(scrollEl.scrollLeft / scrollEl.clientWidth);
-		onIndexChange(index);
-	}
+		console.log('scroll details', {
+			index,
+			sl: scrollEl.scrollLeft,
+			cw: scrollEl.clientWidth
+		});
+	};
 </script>
 
 <div class="exhibition-content" bind:this={scrollEl} onscroll={handleScroll}>
@@ -70,9 +47,10 @@
 	.exhibition-content {
 		height: 100%;
 		display: flex;
-		overflow-x: scroll;
-		overflow-y: hidden;
-		scroll-snap-type: x mandatory;
+		flex-direction: column;
+		overflow-x: hidden;
+		overflow-y: overflow;
+		scroll-snap-type: y mandatory;
 		scrollbar-width: none;
 	}
 

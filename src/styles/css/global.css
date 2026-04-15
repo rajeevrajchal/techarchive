@@ -11,6 +11,7 @@
 	--color-tertiary: light-dark(env(--color-light-tertiary), env(--color-dark-tertiary));
 	--color-accent: light-dark(env(--color-light-accent), env(--color-dark-accent));
 	--color-text: light-dark(env(--color-dark-primary), env(--color-light-primary));
+	--color-white: #fff;
 }
 
 html {
@@ -22,7 +23,6 @@ body {
 	margin: 0;
 	font-family: env(--font-sans);
 	background: var(--color-primary);
-	color: var(--color-text);
 	transition:
 		background env(--transition-base),
 		color env(--transition-base);
