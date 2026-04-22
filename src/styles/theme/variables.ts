@@ -13,6 +13,7 @@ export const Variables = {
 		xl: '32rem',
 		xxl: '48rem'
 	},
+
 	shadow: {
 		sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
 		md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06)',
@@ -26,7 +27,20 @@ export const Variables = {
 	},
 	font: {
 		sans: "'Space Grotesk', system-ui, sans-serif",
-		mono: "'Space Mono', 'Courier New', monospace"
+		mono: "'Space Mono', 'Courier New', monospace",
+		bold: 700,
+		semibold: 600,
+		normal: 500,
+		light: 400,
+		size: {
+			base: '16rem',
+			xs: '4rem',
+			sm: '8rem',
+			md: '16rem',
+			lg: '20rem',
+			xl: '28rem',
+			xxl: '32rem'
+		}
 	},
 	grid: {
 		'columns-mobile': '3',

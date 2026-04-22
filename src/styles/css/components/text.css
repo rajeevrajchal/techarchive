@@ -1,0 +1,117 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: env(--font-sans);
+}
+
+p,
+div,
+span,
+.text-xxs,
+.text-xs,
+.text-sm,
+.text-md,
+.text-lg,
+.text-xl,
+.text-xxl {
+	font-family: env(--font-mono);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.text-xxs,
+.text-xs,
+.text-sm,
+.text-md,
+.text-lg,
+.text-xl,
+.text-xxl {
+	font-style: normal;
+	font-weight: env(--font-normal);
+	line-height: 1;
+	letter-spacing: 0;
+	white-space: pre-line;
+	text-rendering: geometricPrecision;
+	color: inherit;
+	font-size: env(--font-size-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.text-xxs,
+.text-xs,
+.text-sm,
+.text-md,
+.text-lg,
+.text-xl,
+.text-xxl {
+	&.bold,
+	b {
+		font-weight: env(--font-bold);
+	}
+	&.italic,
+	i {
+		font-style: italic;
+	}
+}
+
+.text-xs {
+	font-size: env(--font-size-xs);
+}
+
+.text-sm {
+	font-size: env(--font-size-sm);
+}
+
+.text-md {
+	font-size: env(--font-size-base);
+}
+
+.text-lg {
+	font-size: env(--font-size-lg);
+}
+
+.text-xl {
+	font-size: env(--font-size-xl);
+}
+
+.text-xxl {
+	font-size: env(--font-size-xxl);
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.bold {
+	font-weight: env(--font-bold);
+}
+
+.semibold {
+	font-weight: env(--font-semibold);
+}
+
+.normal {
+	font-weight: env(--font-normal);
+}
+
+.light {
+	font-weight: env(--font-light);
+}

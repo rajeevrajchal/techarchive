@@ -1,24 +1,29 @@
 <script lang="ts">
-	import ExhibitionBottomMenu from '@modules/exhibition/exhibition-bottom-menu.svelte';
 	import ExhibitionContent from '@modules/exhibition/exhibition-content.svelte';
-	import ExhibitionMenu from '@modules/exhibition/exhibition-menu.svelte';
+	import { onMount } from 'svelte';
 
 	let { data } = $props();
+	let sectionEl: HTMLElement | undefined = $state();
+	let panels: HTMLElement[] = $state([]);
+
+	$inspect('element', sectionEl?.clientHeight);
+	const onScroll = (e: Event) => {
+		console.log('scroll', e);
+	};
 </script>
 
-<section>
-	<ExhibitionMenu />
-	<ExhibitionContent languages={data.languages} />
-	<ExhibitionBottomMenu
-		currentIndex={1}
-		total={data.languages.length}
-		onPrev={() => {
-			console.log('prevs');
-		}}
-		onNext={() => {
-			console.log('prevs');
-		}}
-	/>
+<div class="custom-scrollbar" onscroll={onScroll}>
+	{#each data.languages as _}
+		<div class="panel"></div>
+	{/each}
+</div>
+
+<section bind:this={sectionEl}>
+	{#each data.languages as language, i}
+		<div class="panel" bind:this={panels[i]}>
+			<ExhibitionContent {language} />
+		</div>
+	{/each}
 </section>
 
 <style>
@@ -26,6 +31,22 @@
 		width: 100%;
 		height: 100vh;
 		position: relative;
+		overflow: hidden;
+	}
+
+	.custom-scrollbar {
+		width: 100%;
+		height: 100vh;
+		position: absolute;
+		top: 0;
+		left: 0;
 		z-index: 2;
+		overflow-y: scroll;
+	}
+
+	.panel {
+		width: 100vw;
+		height: 100vh;
+		border: 1px solid green;
 	}
 </style>

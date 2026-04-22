@@ -1,4 +1,4 @@
-@import './text.css';
+@import './components/text.css';
 
 :root {
 	color-scheme: light dark;
