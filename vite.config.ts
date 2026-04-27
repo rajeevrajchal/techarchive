@@ -5,6 +5,9 @@ import { environmentVariables } from './vite-plugins/lightningcss';
 import { Variables, Breakpoints } from './src/styles/theme/variables';
 
 export default defineConfig({
+	server: {
+		port: 5174
+	},
 	css: {
 		transformer: 'lightningcss',
 		lightningcss: {

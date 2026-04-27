@@ -1,6 +1,5 @@
 <script lang="ts">
 	import ExhibitionContent from '@modules/exhibition/exhibition-content.svelte';
-	import { onMount } from 'svelte';
 
 	let { data } = $props();
 	let sectionEl: HTMLElement | undefined = $state();
@@ -28,19 +27,19 @@
 
 <style>
 	section {
-		width: 100%;
-		height: 100vh;
 		position: relative;
 		overflow: hidden;
+		position: absolute;
+		inset: 0;
+		z-index: 3;
 	}
 
 	.custom-scrollbar {
 		width: 100%;
 		height: 100vh;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: 2;
 		overflow-y: scroll;
 	}
 
