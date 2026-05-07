@@ -10,10 +10,8 @@
 
 <style>
 	.container {
-		height: 100vh;
 		width: 100%;
 		position: relative;
-		overflow: hidden;
 
 		background-image: url('/background.png');
 		background-size: cover;

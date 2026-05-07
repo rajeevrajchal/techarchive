@@ -39,7 +39,6 @@
 	.exhibition-content {
 		height: 100%;
 		width: 100%;
-		background: red;
 	}
 
 	.exhibition-content::-webkit-scrollbar {

@@ -1,51 +1,52 @@
 <script lang="ts">
+	import { ScrollPinning } from '$lib/shared/utils/scroll-pining';
 	import ExhibitionContent from '@modules/exhibition/exhibition-content.svelte';
+	import { onMount } from 'svelte';
 
 	let { data } = $props();
-	let sectionEl: HTMLElement | undefined = $state();
-	let panels: HTMLElement[] = $state([]);
 
-	$inspect('element', sectionEl?.clientHeight);
-	const onScroll = (e: Event) => {
-		console.log('scroll', e);
-	};
+	let panelEls: HTMLElement[] = $state([]);
+	let stack: ScrollPinning | undefined = $state(undefined);
+	let ratios: number[] = $state(new Array(data.languages.length).fill(0));
+
+	onMount(() => {
+		stack = new ScrollPinning(panelEls, {
+			scrub: 1,
+			scrollDuration: 1.2,
+			onPanelEnter: (i) => console.log(`Panel ${i + 1} entered`),
+			onPanelProgress: (i, ratio) => {
+				// ratio = 0 when panel just became active
+				// ratio = 1 when next panel is fully covering this one
+				ratios[i] = ratio;
+			}
+		});
+
+		return () => stack?.destroy();
+	});
+
+	$inspect(ratios);
 </script>
 
-<div class="custom-scrollbar" onscroll={onScroll}>
-	{#each data.languages as _}
-		<div class="panel"></div>
+<div class="scroll-wrapper">
+	{#each data.languages as panel, i}
+		<div bind:this={panelEls[i]} class="panel" style:z-index={i + 1}>
+			<ExhibitionContent language={panel} />
+		</div>
 	{/each}
 </div>
 
-<section bind:this={sectionEl}>
-	{#each data.languages as language, i}
-		<div class="panel" bind:this={panels[i]}>
-			<ExhibitionContent {language} />
-		</div>
-	{/each}
-</section>
-
 <style>
-	section {
-		position: relative;
-		overflow: hidden;
-		position: absolute;
-		inset: 0;
-		z-index: 3;
-	}
-
-	.custom-scrollbar {
+	.scroll-wrapper {
 		width: 100%;
-		height: 100vh;
-		position: fixed;
-		top: 0;
-		left: 0;
-		overflow-y: scroll;
 	}
 
 	.panel {
-		width: 100vw;
+		width: 100%;
 		height: 100vh;
-		border: 1px solid green;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		background: #000000;
 	}
 </style>
